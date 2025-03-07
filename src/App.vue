@@ -5,6 +5,9 @@
 import FormWrite from './components/FormWrite.vue';
 import ListWrites from './components/ListWrites.vue';
 import NotFound from './components/NotFound.vue';
+import { useDiareStore } from './store/diare.js';
+
+let store;
 
 const routes = {
   '/': FormWrite,
@@ -13,9 +16,14 @@ const routes = {
 
 export default {
   data() {
+
     return {
-      currentPath: window.location.hash
+      currentPath: window.location.hash,
+      personalDiary: [],
     }
+  },
+  methods: {
+
   },
   computed: {
     currentView() {
@@ -23,33 +31,41 @@ export default {
     }
   },
   mounted() {
+
     window.addEventListener('hashchange', () => {
       this.currentPath = window.location.hash
     })
+
+    // useDiareStore().setFirstData()
+    store = useDiareStore()
+    store.setFirstData()
+
+  },
+  created() {
   }
 }
 </script>
 
 <template>
 
-  
+
   <div class="my-container">
     <header>
-      
-      
-      <ul class="nav nav-tabs justify-content-center">
-        
+
+
+      <ul class="nav nav-tabs justify-content-center mb-4">
+
         <li class="nav-item">
-          <a class="nav-link" href="#/" >Запись в дневние</a>
+          <a class="nav-link" href="#/">Запись в дневние</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#/ListWrites" >Cписок дат</a>
+          <a class="nav-link" href="#/ListWrites">Cписок дат</a>
         </li>
-        
+
       </ul>
     </header>
     <component :is="currentView" />
-  
+
   </div>
 </template>
 
@@ -57,28 +73,4 @@ export default {
 header {
   line-height: 1.5;
 }
-
-/*
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-} */
 </style>
