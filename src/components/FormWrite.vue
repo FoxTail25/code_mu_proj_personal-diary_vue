@@ -1,17 +1,28 @@
-<script setup>
-
+<script>
+export default {
+	data() {
+		return {
+			text: "",
+		}
+	},
+	computed() {
+		console.log(this.text)
+	}
+}
 </script>
 
 
 
 
 <template>
-	<textarea name="textArea" id="ta" placeholder="Оставить запись за текущий день" class="my-text-area"></textarea>
+	<textarea v-model="text" name="textArea" id="ta" placeholder="Оставить запись за текущий день"
+		class="my-text-area"></textarea>
 
 	<div class="row justify-content-center">
 
 		<button class="btn btn-primary col-sm-4">Добавить запись в дневник</button>
 	</div>
+	<p>{{ text }}</p>
 </template>
 
 
