@@ -38,12 +38,11 @@ export default {
       this.currentPath = window.location.hash
     })
 
-    // useDiareStore().setFirstData()
-    store = useDiareStore()
-    store.setFirstData()
-
+    
   },
   created() {
+    store = useDiareStore()
+    store.setFirstData()
   }
 }
 </script>
