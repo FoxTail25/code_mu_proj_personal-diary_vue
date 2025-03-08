@@ -14,12 +14,16 @@ export default {
 
 		}
 	},
+	methods:{
+		setReadingRecord(ind){
+			store.setInd(ind)
+		}
+	},
 	computed: {
 		getRecordDate() {
 			let arr = this.data.map(element => {
 				return element.data
 			});
-			console.log(arr)
 			return arr
 		}
 	},
@@ -41,17 +45,14 @@ export default {
 <template>
 
 	<ol>
+
+
 		<li v-for="(elem, ind) in data" key="ind">
-			<details class="details">
-				<summary>{{ elem.data }}</summary>
-<div v-for="(elem,ind) in elem.records ">
-	<p>{{ elem.time }}</p>
-	<p>{{ elem.text }}</p>
-</div>
-				<!-- {{elem.records}} -->
-			</details>
+			<a href="#/ReadWrite" @click="setReadingRecord(ind)"> {{ elem.data }}</a>
 		</li>
-	</ol>
+
+	</ol> 
+	
 
 </template>
 
