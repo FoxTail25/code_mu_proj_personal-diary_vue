@@ -32,27 +32,19 @@ export default {
 
 
 <template>
-	<!-- <textarea v-model="text" name="textArea" id="ta" placeholder="Оставить запись за текущий день"
-		class="my-text-area"></textarea> -->
-
-	<div class="form-floating">
+	
+	<div class="form-floating mb-4">
 		<textarea v-model="text" class="form-control p-20" placeholder="Leave a comment here"
 			id="floatingTextarea"></textarea>
 		<label for="floatingTextarea">{{dateNow}}</label>
 	</div>
 
-	<!-- <div class="m-3">
-		<label for="exampleFormControlTextarea1" class="form-label">Добавить запись за текущий день</label>
-		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-	</div> -->
 
+	<div class="row justify-content-center w-100">
 
-	<div class="row justify-content-center">
-
-		<button class="btn btn-primary col-sm-4">Добавить запись в дневник</button>
+		<button class="btn btn-primary col-10 col-sm-6 col-md-4 ">Добавить запись в дневник</button>
 	</div>
-	<p>{{ text }}</p>
-	<p>{{ text2 }}</p>
+	
 </template>
 
 
