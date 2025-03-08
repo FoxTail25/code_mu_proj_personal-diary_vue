@@ -33,7 +33,6 @@ export default {
 			}
 			store.setIndLastEditRec('none');
 			window.location.href= '#/ListWrites'
-			// window.location.href = '#/'
 		}
 	},
 	mounted() {
