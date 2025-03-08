@@ -16,7 +16,7 @@ export default {
 		getData() {
 			let data = new Date();
 			let year = data.getFullYear();
-			let month = data.getMonth().toString().padStart(2, 0);
+			let month = (data.getMonth()+1).toString().padStart(2, 0);
 			let day = data.getDate().toString().padStart(2, 0);
 
 			return `${day}-${month}-${year}`
@@ -67,7 +67,7 @@ export default {
 	</div>
 
 
-	<div class="row justify-content-center w-100">
+	<div class="row justify-content-center">
 
 		<button @click="addRecordInDiar" class="btn btn-primary col-10 col-sm-6 col-md-4 "> {{text.length > 0 ? "Добавить" : "Создать"}} запись в
 			дневник</button>

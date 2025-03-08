@@ -50,7 +50,7 @@ export default {
 <template>
 
 
-  <div class="my-container">
+  <div class="container">
     <header>
 
 
