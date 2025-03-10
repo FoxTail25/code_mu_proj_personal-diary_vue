@@ -26,13 +26,13 @@ export default {
 				let newRecord = {
 					data: this.dateNow,
 					records: this.text
-				}
-				store.addRecordInDiare(newRecord)
+				};
+				store.addRecordInDiare(newRecord);
 			} else {
-				this.$refs.ta.focus()
+				this.$refs.ta.focus();
 			}
 			store.setIndLastEditRec('none');
-			window.location.href= '#/ListWrites'
+			window.location.href= '#/ListWrites';
 		}
 	},
 	mounted() {
@@ -49,13 +49,9 @@ export default {
 			this.text = record.records;
 			this.dateNow = record.data;
 		}
-
 	}
 }
 </script>
-
-
-
 
 <template>
 

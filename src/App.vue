@@ -31,47 +31,36 @@ export default {
   },
   computed: {
     currentView() {
-      return routes[this.currentPath.slice(1) || '/'] || NotFound
+      return routes[this.currentPath.slice(1) || '/'] || NotFound;
     }
   },
   mounted() {
-
     window.addEventListener('hashchange', () => {
-      this.currentPath = window.location.hash
+      this.currentPath = window.location.hash;
     })
-
-
   },
   created() {
-    store = useDiareStore()
-    store.setFirstData()
+    store = useDiareStore();
+    store.setFirstData();
   }
 }
 </script>
 
 <template>
-
-
   <div class="container">
     <header>
-
-
       <ul class="nav nav-tabs justify-content-center mb-4">
-
         <li class="nav-item">
           <a class="nav-link" href="#/">Запись в дневние</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#/ListWrites">Cписок дат</a>
         </li>
-
       </ul>
-
       <!-- Button trigger modal -->
       <button type="button" class="question" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <Question />
       </button>
-
       <!-- Modal -->
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -91,28 +80,21 @@ export default {
           </div>
         </div>
       </div>
-
     </header>
     <component :is="currentView" />
-
   </div>
-
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
 }
-
 .question {
-  /* color: transparent; */
   position: absolute;
   right: 5px;
   top: 5px;
-  /* outline: none; */
   background: none;
   border: none;
-
   @media screen and (min-width: 768px) {
     top: 20px;
     right: 10vw;

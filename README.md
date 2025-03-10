@@ -1,29 +1,23 @@
-# personal-diary
+Задача от ментора Дмитрия Трепачёва
 
-This template should help get you started developing with Vue 3 in Vite.
+JavaScript уровень 2
 
-## Recommended IDE Setup
+Проект "Онлайн дневник"
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Проект представляет собой сервис, в котором пользователь может вести свой дневник.
 
-## Customize configuration
+Форма для записи
+На данной странице должна быть текстареа, в которой пользователь будет осуществлять набор записи в дневник за текущий день.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Список записей
+На данной странице должен быть список дат, за которые есть записи в дневнике. Пользователь может нажать на любую дату и перейти на страницу для чтения этой записи.
 
-## Project Setup
+Редактирование
+Пользователь может редактировать только те записи, которые не старше 3-х дней.
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+10.03.2025 Основные задачи выполнены. Проект реализован с помощью фреймворков Vue 3 и Bootstrap 5.3
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+На будущее: Наверное надо сделать полноценный Vue-router. И возможно добавить стилей.

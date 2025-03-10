@@ -12,13 +12,13 @@ export default {
     },
     methods: {
         editRecord() {
-            store.setIndLastEditRec(this.ind)
-            window.location.href = '#/'
+            store.setIndLastEditRec(this.ind);
+            window.location.href = '#/';
         }
     },
     computed: {
         readList() {
-            return this.readingRecord.records
+            return this.readingRecord.records;
         },
         checkDate() {
             let answer = true
@@ -37,7 +37,7 @@ export default {
     mounted() {
         store = useDiareStore();
         this.readingRecord = { ...store.getRecordForRead };
-        this.ind = [...store.getData].findIndex(e => e.data == this.readingRecord.data)
+        this.ind = [...store.getData].findIndex(e => e.data == this.readingRecord.data);
     }
 }
 </script>
